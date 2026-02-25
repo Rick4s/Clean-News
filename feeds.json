@@ -7,8 +7,5 @@
         "name": "联合国新闻",
         "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml"
     },
-    {
-        "name": "Hacker News",
-        "url": "https://hnrss.org/frontpage"
-    }
 ]
+
