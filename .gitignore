@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+
+# Ignore generated index.html during local dev (optional, since CI will commit it anyway, but we might not want to ignore it if we commit it locally. Based on instructions, the github action will commit and push index.html, let's not ignore it so we can track it or leave it tracked)
+# index.html
