@@ -1,0 +1,45 @@
+name: Clean-News Update
+
+on:
+  schedule:
+    # 按照北京时间早 8 点和晚 8 点运行 (UTC 时间 0 点和 12 点)
+    - cron: '0 0,12 * * *'
+  workflow_dispatch: # 允许在 GitHub 界面手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Clean-News Script
+        run: |
+          python src/main.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 仅添加生成的静态页面
+          git add index.html
+          
+          # 强制防御机制：只有检测到存在差异时才会进行 commit，防止因无更新导致 pipeline 出错退出
+          git diff --quiet --staged || git commit -m "Auto-update news: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          
+          git push origin main
