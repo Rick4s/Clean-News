@@ -7,5 +7,38 @@
         "name": "联合国新闻",
         "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml"
     },
+    {
+        "name": "知乎每日精选",
+        "url": "https://rsshub.app/zhihu/daily"
+    },
+    {
+        "name": "纽约时报中文网",
+        "url": "https://cn.nytimes.com/rss.html"
+    },
+    {
+        "name": "BBC 中文网",
+        "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml"
+    },
+    {
+        "name": "联合早报",
+        "url": "https://rsshub.app/zaobao/realtime/china"
+    },
+    {
+        "name": "端传媒",
+        "url": "https://theinitium.com/newsfeed/"
+    },
+    {
+        "name": "Matters.town",
+        "url": "https://rsshub.app/matters/latest"
+    },
+    {
+        "name": "中国数字时代",
+        "url": "https://chinadigitaltimes.net/chinese/feed/"
+    },
+    {
+        "name": "Solidot",
+        "url": "https://www.solidot.org/index.rss"
+    }
 ]
+
 
